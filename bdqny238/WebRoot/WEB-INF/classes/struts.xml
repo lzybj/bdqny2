@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+	   <!-- 配置拦截器 -->
+		<interceptors>
+			<interceptor name="myinter" class="com.bdqn.interceptor.MyInterceptor"></interceptor>
+			<!-- 配置拦截器栈 -->
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="myinter"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认调用拦截器栈 -->
+		<default-interceptor-ref name="mystack"></default-interceptor-ref>
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<action name="login" class="com.bdqn.action.LoginAction">
+			<result name="succ">/main.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="test" class="com.bdqn.action.TestAction">
+			<result name="succ">/main.jsp</result>		
+		</action>
+	</package>
+</struts>    

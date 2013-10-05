@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="mytest">/test.jsp</result>
+		</global-results>
+		<action name="login" class="com.bdqn.action.UsersAction" method="login">
+			<result name="succ">/main.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="register" class="com.bdqn.action.UsersAction" method="register">
+			<result name="succ">/login.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="cxall" class="com.bdqn.action.UsersAction" method="cxall">
+			<result name="succ">/main.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+	</package>
+</struts>    

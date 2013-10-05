@@ -16,7 +16,7 @@ public class SmsService {
 		Session session = HibernateSessionFactory.getSession();
 		String hsql = "select sms from Sms sms " +
 				"inner join sms.smsUsersByResvUsid resvsu " +
-				"where resvsu.uname = ?";
+				"where resvsu.uname = ? and sms.smsState = 0";
 		Query query = session.createQuery(hsql);
 		query.setString(0,su.getUname());
 		data = query.list();
@@ -38,6 +38,9 @@ public class SmsService {
 		SmsService ss = new SmsService();
 		SmsUsers su = new SmsUsers();
 		su.setUname("ilyj");
-		System.out.println(ss.findByResvSmsUsersNoRead(su));
+		List<Sms> data = ss.findByResvSmsUsers(su);
+		for (Sms sms : data) {
+			System.out.println(sms.getSmsContent());
+		}
 	}
 }

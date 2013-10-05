@@ -1,0 +1,4 @@
+[framework] 2013-08-03 14:37:20,395 - org.hibernate.util.JDBCExceptionReporter -1220 [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01017: invalid username/password; logon denied
+
+[framework] 2013-08-03 14:38:08,170 - org.hibernate.util.JDBCExceptionReporter -0    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01017: invalid username/password; logon denied
+

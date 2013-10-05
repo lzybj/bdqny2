@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mystruts>
+	<actions>
+		<action name="login" class="com.bdqn.myaction.LoginAction">
+			<result name="succ" redirect="true">main.jsp</result>
+			<result name="fail">fail.jsp</result>
+		</action>
+	</actions>
+</mystruts>

@@ -11,7 +11,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'main.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -20,12 +21,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<sx:head/>
+  <sx:head/>
   </head>
   
   <body>
-    <s:url id="tologin" value="/tologin.action"></s:url>
-    <sx:a href="%{tologin}" targets="div1">用户登录</sx:a>
-    <sx:div id="div1"></sx:div>
+    <s:url id="toreadnum" value="/cxsmsnum.action"></s:url>
+    
+    <sx:div id="div1" updateFreq="5000" href="%{toreadnum}" ></sx:div>
+    
   </body>
 </html>

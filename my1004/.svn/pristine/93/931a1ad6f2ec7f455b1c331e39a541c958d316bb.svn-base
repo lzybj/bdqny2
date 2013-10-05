@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-dojo-tags" prefix="sx"%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,8 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <s:url id="tologin" value="/tologin.action"></s:url>
-    <sx:a href="%{tologin}" targets="div1">用户登录</sx:a>
-    <sx:div id="div1"></sx:div>
+    This is my JSP page. <br>
   </body>
 </html>

@@ -1,0 +1,7 @@
+[framework] 2013-08-08 16:29:27,523 - org.hibernate.LazyInitializationException -1    [main] ERROR org.hibernate.LazyInitializationException  - failed to lazily initialize a collection of role: com.bdqn.hibernate.domain.TblUsers.tblTxls, no session or session was closed
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.bdqn.hibernate.domain.TblUsers.tblTxls, no session or session was closed
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:380)
+	at org.hibernate.collection.AbstractPersistentCollection.throwLazyInitializationExceptionIfNotConnected(AbstractPersistentCollection.java:372)
+	at org.hibernate.collection.AbstractPersistentCollection.readSize(AbstractPersistentCollection.java:119)
+	at org.hibernate.collection.PersistentSet.size(PersistentSet.java:162)
+	at com.bdqn.hibernate.test.Demo3.main(Demo3.java:30)

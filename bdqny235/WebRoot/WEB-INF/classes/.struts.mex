@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="my" location="10,10" size="280,140">
+    <action name="login" location="68,50" size="150,62">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="toaction" />
+    </action>
+  </package>
+  <webResource name="main.jsp" path="/main.jsp" location="75,192" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="355,52" size="150,55" />
+  <package name="my2" location="350,200" size="170,70">
+    <action name="myaction" location="12,20" size="150,41">
+      <result name="succ">
+        <resourceEdge source="succ" routing="0" target="succ.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="succ.jsp" path="/succ.jsp" location="50,350" size="150,55" />
+</Struts2Diagram>
+

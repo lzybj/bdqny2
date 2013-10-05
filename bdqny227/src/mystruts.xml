@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mystruts>
+	<actions>
+		<action name="myaction" class="com.bdqn.struts.action.MyAction">
+			<result name="succ">/succ.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="myaction2" class="com.bdqn.struts.action.MyAction2">
+			<result name="succ">/succ2.jsp</result>
+			<result name="fail">/fail2.jsp</result>
+		</action>
+		<action name="myaction3" class="com.bdqn.struts.action.MyAction3">
+			<result name="succ">/succ3.jsp</result>
+			<result name="fail">/fail3.jsp</result>
+		</action>
+	</actions>
+</mystruts>

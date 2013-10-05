@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mystruts>
+   <myaction>
+       <action-name>myinit</action-name>
+       <action-class>com.bdqn.servlet.MyInitParamServlet</action-class>
+   </myaction>
+   <myaction>
+       <action-name>myinit2</action-name>
+       <action-class>com.bdqn.servlet.MyInitParamServlet2</action-class>
+   </myaction>
+   <myaction>
+       <action-name>myinit3</action-name>
+       <action-class>com.bdqn.servlet.MyInitParamServlet3</action-class>
+   </myaction>
+</mystruts>

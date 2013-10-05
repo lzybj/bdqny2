@@ -1,0 +1,103 @@
+[framework] 2013-08-06 16:20:22,713 - org.hibernate.util.JDBCExceptionReporter -0    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:20:22,714 - org.hibernate.util.JDBCExceptionReporter -1    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:20:22,715 - org.hibernate.event.def.AbstractFlushingEventListener -2    [main] ERROR org.hibernate.event.def.AbstractFlushingEventListener  - Could not synchronize database state with session
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:94)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:114)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:109)
+	at org.hibernate.jdbc.AbstractBatcher.prepareBatchStatement(AbstractBatcher.java:244)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2242)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2678)
+	at org.hibernate.action.EntityInsertAction.execute(EntityInsertAction.java:79)
+	at org.hibernate.engine.ActionQueue.execute(ActionQueue.java:279)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:263)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:50)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1028)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:366)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:137)
+	at com.bdqn.hibernate.test.Demo2.main(Demo2.java:35)
+Caused by: java.sql.BatchUpdateException: ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+	at oracle.jdbc.driver.OraclePreparedStatement.executeBatch(OraclePreparedStatement.java:10070)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeBatch(OracleStatementWrapper.java:213)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 15 more
+[framework] 2013-08-06 16:21:04,848 - org.hibernate.util.JDBCExceptionReporter -0    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:21:04,849 - org.hibernate.util.JDBCExceptionReporter -1    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:21:04,850 - org.hibernate.event.def.AbstractFlushingEventListener -2    [main] ERROR org.hibernate.event.def.AbstractFlushingEventListener  - Could not synchronize database state with session
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:94)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:266)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:50)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1028)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:366)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:137)
+	at com.bdqn.hibernate.test.Demo2.main(Demo2.java:35)
+Caused by: java.sql.BatchUpdateException: ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+	at oracle.jdbc.driver.OraclePreparedStatement.executeBatch(OraclePreparedStatement.java:10070)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeBatch(OracleStatementWrapper.java:213)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 8 more
+[framework] 2013-08-06 16:21:37,909 - org.hibernate.util.JDBCExceptionReporter -0    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:21:37,910 - org.hibernate.util.JDBCExceptionReporter -1    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:21:37,911 - org.hibernate.event.def.AbstractFlushingEventListener -2    [main] ERROR org.hibernate.event.def.AbstractFlushingEventListener  - Could not synchronize database state with session
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:94)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:266)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:50)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1028)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:366)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:137)
+	at com.bdqn.hibernate.test.Demo2.main(Demo2.java:35)
+Caused by: java.sql.BatchUpdateException: ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+	at oracle.jdbc.driver.OraclePreparedStatement.executeBatch(OraclePreparedStatement.java:10070)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeBatch(OracleStatementWrapper.java:213)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 8 more
+[framework] 2013-08-06 16:46:31,496 - org.hibernate.util.JDBCExceptionReporter -0    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:46:31,498 - org.hibernate.util.JDBCExceptionReporter -2    [main] ERROR org.hibernate.util.JDBCExceptionReporter  - ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+[framework] 2013-08-06 16:46:31,501 - org.hibernate.event.def.AbstractFlushingEventListener -5    [main] ERROR org.hibernate.event.def.AbstractFlushingEventListener  - Could not synchronize database state with session
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:94)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:266)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:50)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1028)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:366)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:137)
+	at com.bdqn.hibernate.test.Demo2.main(Demo2.java:35)
+Caused by: java.sql.BatchUpdateException: ORA-01400: 无法将 NULL 插入 ("SCOTT"."TBL_TXL"."USID")
+
+	at oracle.jdbc.driver.OraclePreparedStatement.executeBatch(OraclePreparedStatement.java:10070)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeBatch(OracleStatementWrapper.java:213)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 8 more

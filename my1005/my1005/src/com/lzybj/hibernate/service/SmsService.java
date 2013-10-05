@@ -13,13 +13,19 @@ import com.lzybj.hibernate.factory.HibernateSessionFactory;
 
 @Entity
 public class SmsService {
-	public List<Sms> findByResvSmsUsers(SmsUsers su){
+	public List<Sms> findByResvSmsUsers(SmsUsers su,String page){
 		List<Sms> data = new ArrayList<Sms>();
 		Session session = HibernateSessionFactory.getSession();
 		String hsql = "select sms from Sms sms " +
 				"inner join sms.smsUsersByResvUsid resvsu " +
 				"where resvsu.uname = ? and sms.smsState = 0";
 		Query query = session.createQuery(hsql);
+		int pageNum = 1;
+		if(page.equals("")){
+			pageNum = Integer.parseInt(page);
+		}
+		query.setFirstResult((pageNum - 1) * 2);
+		query.setMaxResults(pageNum * 2); 
 		query.setString(0,su.getUname());
 		data = query.list();
 		HibernateSessionFactory.closeSession();
@@ -40,7 +46,7 @@ public class SmsService {
 		SmsService ss = new SmsService();
 		SmsUsers su = new SmsUsers();
 		su.setUname("ilyj");
-		List<Sms> data = ss.findByResvSmsUsers(su);
+		List<Sms> data = ss.findByResvSmsUsers(su,"1");
 		for (Sms sms : data) {
 			System.out.println(sms.getSmsContent());
 		}

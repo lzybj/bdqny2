@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student stuid="1001" stuname="小明">
+		<exam-result name="走进JAVA编程世界">78</exam-result>
+		<exam-result name="struts框架">68</exam-result>
+		<exam-result name="hibernate框架">98</exam-result>
+	</student>
+	<student stuid="1002" stuname="小李">
+		<exam-result name="走进JAVA编程世界">78</exam-result>
+		<exam-result name="html和css">58</exam-result>
+		<exam-result name="sqlserver数据库">78</exam-result>
+	</student>
+	<student stuid="1003" stuname="小小">
+		<exam-result name="html和css">58</exam-result>
+		<exam-result name="mysql数据库">68</exam-result>
+	</student>
+	<student stuid="1004" stuname="萌萌">
+		<exam-result name="winform框架">78</exam-result>
+	</student>
+</students>

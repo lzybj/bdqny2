@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student stuid="1001">
+		<student-name>小名</student-name>
+		<student-age>19</student-age>
+	</student>
+	<student stuid="1002">
+		<student-name>小赵</student-name>
+		<student-age>20</student-age>
+	</student>
+	<student stuid="1003">
+		<student-name>小小</student-name>
+		<student-age>16</student-age>
+	</student>
+</students>

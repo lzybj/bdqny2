@@ -16,7 +16,11 @@ public class SmsService {
 		Session session = HibernateSessionFactory.getSession();
 		String hsql = "select sms from Sms sms " +
 				"inner join sms.smsUsersByResvUsid resvsu " +
+<<<<<<< HEAD
 				"where resvsu.uname = ? and sms.smsState = 0 order by sms.smsDate desc";
+=======
+				"where resvsu.uname = ? and sms.smsState = 0";
+>>>>>>> a67ab9189403d977d3841227ce5f955f1da38f01
 		Query query = session.createQuery(hsql);
 		int pageNum = 1;
 		if(!page.equals("")){
@@ -44,7 +48,11 @@ public class SmsService {
 		SmsService ss = new SmsService();
 		SmsUsers su = new SmsUsers();
 		su.setUname("ilyj");
+<<<<<<< HEAD
 		List<Sms> data = ss.findByResvSmsUsers(su,"2");
+=======
+		List<Sms> data = ss.findByResvSmsUsers(su);
+>>>>>>> a67ab9189403d977d3841227ce5f955f1da38f01
 		for (Sms sms : data) {
 			System.out.println(sms.getSmsContent());
 		}

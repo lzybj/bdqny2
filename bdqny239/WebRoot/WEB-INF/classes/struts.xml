@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+	<!-- 
+	   虚拟action，即无实体action类的形式
+	   一般用于A.jsp到B.jsp的普通链接
+	 -->
+		<action name="tologin">
+			<result type="redirect">/login.jsp</result>
+		</action>
+	<!--
+		与用户相关操作的Action 
+	 -->
+		<action name="login" class="com.bdqn.struts.action.SmsUsersAction" method="login">
+			<result name="succ">/main.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+	</package>
+</struts>    

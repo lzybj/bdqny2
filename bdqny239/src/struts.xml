@@ -16,5 +16,19 @@
 			<result name="succ">/main.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
+		<action name="register" class="com.bdqn.struts.action.SmsUsersAction" method="register">
+			<result name="succ">/main.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+	<!--
+		与短息操作相关的Action 
+	 -->
+		<action name="getnoreadnum" class="com.bdqn.struts.action.SmsAction" method="getNoReadNum">
+			<result name="succ">/noreadnum.jsp</result>
+		</action>
+		<action name="getnoreadlist" class="com.bdqn.struts.action.SmsAction" method="getNoReadList">
+			<result name="succ">/noreadlist.jsp</result>
+		</action>
 	</package>
 </struts>    

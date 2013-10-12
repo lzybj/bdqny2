@@ -8,7 +8,9 @@
     <class name="com.bdqn.hibernate.domain.SmsUsers" table="SMS_USERS" schema="BDQN_SMS_SYSTEM_ADMIN">
         <id name="usid" type="java.lang.Integer">
             <column name="USID" precision="8" scale="0" />
-            <generator class="sequence" />
+            <generator class="sequence">
+            		<param name="sequence">SEQ_SMS_USERS</param>
+            </generator>
         </id>
         <property name="uname" type="java.lang.String">
             <column name="UNAME" length="50" />

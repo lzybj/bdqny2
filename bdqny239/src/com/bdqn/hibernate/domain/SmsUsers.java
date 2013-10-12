@@ -74,4 +74,11 @@ public class SmsUsers implements java.io.Serializable {
 		this.smsesForResvUsid = smsesForResvUsid;
 	}
 
+	public SmsUsers(String uname, String upwd) {
+		super();
+		this.uname = uname;
+		this.upwd = upwd;
+	}
+
+	
 }

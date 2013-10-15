@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib uri="/struts-dojo-tags" prefix="sx" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,8 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'main.jsp' starting page</title>
-    
+    <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -21,12 +20,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-  <sx:head/>
+	<sx:head/>
   </head>
   
   <body>
-    欢迎您：<s:property value="#session.su.uname"/>,<s:property value="#session.myinfo"/>
-    <s:url id="tonoreadnumaction" value="/getnoreadnum.action"></s:url> 
-    <sx:div id="div2" href="%{tonoreadnumaction}" updateFreq="5000"></sx:div>
+    <sx:div id="div1" href="getres.action" loadingText="请稍后，正在加载..." errorText="对不起，系统忙，请稍后再试..."></sx:div>
+    <sx:div id="div2" href="getpagecount.action"></sx:div>
   </body>
 </html>

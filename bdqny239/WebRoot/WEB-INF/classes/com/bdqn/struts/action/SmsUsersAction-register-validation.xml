@@ -10,7 +10,7 @@
 			<!-- 去空格 -->
 			<param name="trim">true</param>
 			<!-- 提示信息 -->
-			<message>用户名不能为空</message>
+			<message key="sms.validation.username.err"></message>
 		</field-validator>
 		<!-- 用户名长度是否在5-32之间 -->
 		<field-validator type="stringlength">
@@ -18,7 +18,7 @@
 			<param name="maxLength">32</param>
 			<param name="minLength">5</param>
 			<!-- 提示信息 -->
-			<message>用户名不符合规范</message>
+			<message key="sms.validation.username.len.err"></message>
 		</field-validator>		
 	</field>
 	<field name="upwd">

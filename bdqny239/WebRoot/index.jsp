@@ -25,6 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   	<s:url id="tologin" value="/tologin.action"></s:url>
-  	<sx:div id="div1"><sx:a href="%{tologin}" targets="div1">登录</sx:a></sx:div>
+  	<sx:div id="div1"><sx:a href="%{tologin}" targets="div1">
+  		<s:text name="sms.index.login.info"></s:text>
+  	</sx:a></sx:div>
   </body>
 </html>

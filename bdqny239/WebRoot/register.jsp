@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <s:form action="register.action" validate="true">
-    		<s:textfield label="用户名" name="uname"></s:textfield>
+    		<s:textfield key="sms.register.username.info" name="uname"></s:textfield>
     		<s:password label="密码" name="upwd"></s:password>
     		<s:password label="确认密码" name="reupwd"></s:password>
     		<s:submit value="注册"></s:submit>

@@ -70,6 +70,7 @@ public class SmsUsersAction extends ActionSupport{
 		if(su != null){
 			Map<String,Object> session = ActionContext.getContext().getSession();
 			session.put("su",su);
+			session.put("myinfo",this.getText("sms.login.action.info"));
 			return "succ";
 		}
 		return "fail";

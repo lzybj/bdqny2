@@ -1,0 +1,37 @@
+OGNL类型转换开发步骤：
+
+1.确定要转换Action中的属性以及请求参数名的一一对应
+
+2.创建自定义类型转换器.
+
+注意：继承ognl包下的DefaultTypeConverter类，重写convertValue方法
+
+其中对方法参数如下：
+
+1）.context Struts上下文
+
+2）.value 字符串数组
+
+3）.toType 目标类型
+
+3.创建自定义转换器配置文件
+
+3.1 在对应Action同级目录下创建properties文件
+
+3.2 命名规则：Action类名-conversion.properties
+
+例如：Action类名:UsersAction
+
+配置文件名：UsersAction-conversion.properties
+
+3.3 配置文件内容
+
+请求参数名=类型转换类全路径
+
+例如：
+
+myuser请求参数名
+
+类型转换类:com.bdqn.conversion.UsersTypeConverter
+
+myuser=com.bdqn.conversion.UsersTypeConverter

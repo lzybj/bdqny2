@@ -1,0 +1,31 @@
+validation框架验证步骤：
+
+1.在Action中继承ActionSupport重写validate方法
+
+2.编写validation框架配置文件
+
+2.1 位置：对应Action类的目录下
+
+2.2 命名：Action类名-ActionName-validation.xml
+
+例如:UsersAction-reg-validation.xml
+
+2.3 内容
+
+<validators>
+
+<filed name="字段名">
+	<filed-validator type="验证类型(reqiredstring,length....)">
+		<param name="trim/length">..</param>
+		<message></message?
+	</filed-validator>
+  ....
+</filed>
+...
+</validators>
+
+
+3.在视图层中strust标签中<form validation="true">
+
+
+执行顺序:validtion框架 -》validator

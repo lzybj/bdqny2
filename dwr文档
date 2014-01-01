@@ -1,0 +1,45 @@
+dwr开发步骤
+
+1.导入dwr.jar文件到lib目录下
+
+2.配置web.xml文件，引入dwrservlet类的配置
+
+	<servlet>
+		<servlet-name>dwr_invoker</servlet-name>
+		<servlet-class>
+			org.directwebremoting.servlet.DwrServlet
+		</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dwr_invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	
+注意：param-name:debug对应value,当在开发模式下为true,在生产环境下为false
+
+3.引入dwr.xml
+
+注意：对于spring框架引入，生成服务器类的方式不同(new/spring..)
+
+4.配置struts.xml(如果引入struts2框架)
+
+<constant name="struts.action.excludePattern" value="/dwr.*"/>
+
+5.在客户端(jsp)引入相关JS文件
+
+具体可在..../dwr/index.html文件查看
+
+6.开发客户端响应调用方法
+
+注意：回调方法的使用，即获得服务器端的返回值
+
+例如：
+
+//回调方法,data为获得回调值（结果值）
+function(data){
+ //获得值后，处理的代码块
+}

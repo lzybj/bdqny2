@@ -1,0 +1,7 @@
+Struts2+Spring3.0+restful包冲突问题：
+
+1.不要引入struts中rest libary包
+
+2.不要引入ext/asm-all-repackaged-2.2.0-b14.jar
+
+避免冲突

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ordersys"
+  id="myeclipse.1386227219858"
+  context-root="/ordersys"
+  j2ee-spec="5.0"
+  archive="ordersys.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

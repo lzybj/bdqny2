@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+		<action name="createneworder" class="orderaction" method="createneworder">
+			<result name="succ">/new_order_detail.jsp</result>
+		</action>
+		<action name="createorderdetails" class="orderdetailsaction" method="createorderdetails">
+			<result name="succ">/new_order_detail.jsp</result>
+		</action>
+		<action name="ordersubmit" class="orderaction" method="ordersubmit">
+			<result name="succ">/new_order.jsp</result>
+		</action>
+	</package>
+</struts>    

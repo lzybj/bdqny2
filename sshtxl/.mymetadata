@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="sshtxl"
+  id="myeclipse.1386058706604"
+  context-root="/sshtxl"
+  j2ee-spec="5.0"
+  archive="sshtxl.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

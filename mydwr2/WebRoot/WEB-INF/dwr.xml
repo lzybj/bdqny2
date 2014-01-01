@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" 
+     "http://getahead.org/dwr/dwr20.dtd">
+<dwr>
+	<allow>
+		<!-- creator属性：new/spring;javascript属性：服务器端的类在客户端中的别名 -->
+		<create creator="spring" javascript="cservice">
+			<!-- 
+			name属性：class(不使用spring框架)/beanName(使用spring)
+			value属性：class:类路径
+			          beanName:applicationContext.xml中的BEAN标签中的id属性
+			 -->
+			<param name="beanName" value="cservice"></param>
+		</create>
+		<!-- 设定Bean 转换器-->
+		<convert converter="bean" match="com.lzybj.service.*"></convert>
+		<convert converter="bean" match="com.lzybj.domain.*"></convert>			
+	</allow>
+</dwr>

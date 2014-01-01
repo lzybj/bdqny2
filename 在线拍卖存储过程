@@ -1,0 +1,61 @@
+create or replace procedure proc_myjob_product is
+  v_num         number := 0;
+  v_max_user_id number;
+  v_max_price   number;
+  cursor myjobcur is
+    select ap_prod_id, ap_reserve_price
+      from auction_product
+     where ap_end_date <= sysdate
+       and ap_status_id = 2;
+begin
+  for myprod in myjobcur loop
+    begin
+      --判断当前循环的产品是否有出价记录
+      select count(*)
+        into v_num
+        from auction_bid
+       where ap_prod_id = myprod.ap_prod_id;
+      if (v_num > 0) then
+        --有出价记录，判断最高出价是否大于底价
+        begin
+          ---获取最高价，以及出价的用户ID
+          select au_user_id, ab_price
+            into v_max_user_id, v_max_price
+            from auction_bid
+           where ap_prod_id = myprod.ap_prod_id
+             and ab_price =
+                 (select max(ab_price)
+                    from auction_bid
+                   where ap_prod_id = myprod.ap_prod_id);
+          if (v_max_price >= myprod.ap_reserve_price) then
+            begin
+              ---最高出价已经大于底价,成交
+              update auction_product
+                 set ap_status_id = 3
+               where ap_prod_id = myprod.ap_prod_id;
+              insert into auction_cj
+                (cj_id, ap_prod_id, au_user_id, cj_create_time, cj_price)
+              values
+                (seq_auction_cj.nextval,
+                 myprod.ap_prod_id,
+                 v_max_user_id,
+                 sysdate,
+                 v_max_price);
+            end;
+          else
+            --最高出价未大于底价，流拍
+            update auction_product
+               set ap_status_id = 4
+             where ap_prod_id = myprod.ap_prod_id;
+          end if;
+        end;
+      else
+        ---无出价记录，直接流拍
+        update auction_product
+           set ap_status_id = 4
+         where ap_prod_id = myprod.ap_prod_id;
+      end if;
+    
+    end;
+  end loop;
+end proc_myjob_product;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!-- 通过SPRING管理的对象，没有私有化，非私有化之分，即全部能实例化 -->
+    <!--
+        bean标记：用于配置管理SPRING中的所有对象
+          id:变量名/别名(必须有)
+          class:类的全路径(可无此属性)
+          abstract:如果为true,代表此类不能被实例化(抽象)
+          factory-method:静态方法名,常用于通过某个类的静态方法获得该类实例(详见myuser2的使用方法)
+          factory-bean:工厂的ref（实例）,常用于通过工厂类获得某个对象实例(详见myuser3的使用方法) 
+     -->
+    <!-- IOC方式一：通过构造方法实例化对象 -->
+	<bean id="myuser" class="com.lzybj.domain.Users"></bean>
+	<!-- IOC方式二：通过静态方法获得对象的实例 -->
+	<bean id="myuser2" class="com.lzybj.domain.Users" factory-method="getInstance"></bean>
+	<!-- 
+	     IOC方式三：通过工厂设计模式获得对象实例,常用基于DAO设计模式应用或Hibernate框架
+	     注意：1.必须先配置(注入)工厂类
+	          2.工厂类中获取对象实例的方法一定是非静态！！！
+	 -->
+	 <!-- 工厂类 -->
+	<bean id="myfactory" class="com.lzybj.factory.MyFactory"></bean>
+	<bean id="myuser3" factory-bean="myfactory" factory-method="getUsers"></bean>
+	<!-- DAO设计模式下的注入 -->
+	<bean id="mydao" factory-bean="myfactory" factory-method="getMyDao"></bean>
+	
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans />
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      path="/test"
+      type="com.lzybj.struts.action.TestAction"
+      validate="false" parameter="par">
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.lzybj.struts.ApplicationResources" />
+</struts-config>
+

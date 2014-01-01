@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- DI(依赖注入)方式一：通过属性注入 -->
+	
+	<bean id="myuser" class="com.lzybj.domain.Users">
+		<!-- 注入属性,value属性 -->
+		<property name="uname" value="laozheng"></property>
+		<!-- value标签 -->
+		<property name="upwd"><value>qaz123</value></property>
+	</bean>
+
+	<!-- DI方式二：通过构造方法注入 -->
+	
+	<bean id="myuser2" class="com.lzybj.domain.Users">
+		<!-- name属性：为属性名方式注入 -->
+		<constructor-arg name="uname" value="laoli"></constructor-arg>
+		<!-- 
+		index属性：为构造方法参数的索引注入，注意：以0开始
+		type属性：为参数的类型 
+		-->
+		<constructor-arg index="1" value="qwerty" type="java.lang.String"></constructor-arg>
+	</bean>
+	
+	<!-- DI注入类型：String和对象类型 -->
+	<bean id="comp" class="com.lzybj.domain.Company">
+		<property name="compcode" value="10001"></property>
+		<property name="compname" value="北大青鸟"></property>
+	</bean>
+	
+	<bean id="group" class="com.lzybj.domain.Group">
+	    <property name="gcode" value="1001"></property>
+	    <property name="gname" value="学术部"></property>
+	    <!-- 注入对象类型(在spring管理下对象类型) -->
+	    <property name="comp" ref="comp"></property>
+	</bean>
+	
+	<bean id="emp" class="com.lzybj.domain.Employee">
+		<property name="ecode" value="10050"></property>
+		<property name="ename" value="laowang"></property>
+		<property name="group" ref="group"></property>
+	</bean>
+	
+	<bean id="emp2" class="com.lzybj.domain.Employee">
+		<property name="ecode" value="10051"></property>
+		<property name="ename" value="laochen"></property>
+		<property name="group" ref="group"></property>
+	</bean>
+	
+	
+</beans>

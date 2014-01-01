@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="comp" class="com.lzybj.domain.Company" scope="singleton">
+		<property name="compname" value="北大青鸟"></property>
+	</bean>
+
+	<bean id="comp2" class="com.lzybj.domain.Company" scope="singleton">
+		<property name="compname" value="北大青鸟"></property>
+	</bean>
+	
+	<bean id="groupx" class="com.lzybj.domain.Group" autowire="byName">
+		<property name="gname" value="学术部"></property>
+	</bean>
+	
+	<bean id="emp" class="com.lzybj.domain.Employee" autowire="byType">
+		<property name="ename" value="老郑"></property>
+	</bean>
+</beans>

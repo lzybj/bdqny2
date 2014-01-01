@@ -1,0 +1,46 @@
+Struts2国际化步骤:
+
+1.编写基础资源文件以及带有国际代码以及语言代码的资源文件
+
+例如：要实现英文，中文，香港
+
+你需要定义4个资源文件
+
+messages.properties---基础资源文件
+
+messages_en.properties-英文
+
+messages_zh_CN.propertie-中文
+
+messages_zh_HK.propertie
+
+
+基础资源文件名_语言代码_国际代码.properties
+
+2.配置struts.xml文件
+
+	<constant name="struts.custom.i18n.resources" value="基础资源文件名"></constant>
+
+3.不同的位置获取资源文件相关点：
+
+3.1 从视图中
+
+3.3.1 html组件 key属性
+
+例如：<s:textfield key="key值">
+
+3.3.2 普通文本显示
+
+例如：就是一句话：登录
+
+使用 <s:text name="key值"/>
+
+3.2 在类中获得资源文件信息
+
+getText("key值");
+
+3.3 在validation.xml中获得资源文件
+
+<message key="key值"></message> 
+
+

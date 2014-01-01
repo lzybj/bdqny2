@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="cXActionForm" type="com.lzybj.struts.form.CXActionForm" />
+    <form-bean name="regform" type="org.apache.struts.action.DynaActionForm">
+    		<form-property name="cname" type="java.lang.String"></form-property>
+    		<form-property name="cpwd" type="java.lang.String"></form-property>
+    </form-bean>
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards>
+  	<forward name="nologin" path="/login.jsp"></forward>
+  </global-forwards>
+  <action-mappings >
+    <action
+      attribute="cXActionForm"
+      name="cXActionForm"
+      path="/cx"
+      scope="request"
+      type="com.lzybj.struts.action.CxAction"
+      validate="true"
+      input="/cx.jsp"
+      parameter="method">
+      <forward name="succ" path="/res.jsp" />
+      <forward name="oklogin" path="/cx.jsp"></forward>
+      <forward name="fail" path="/fail.jsp"></forward>
+    </action>
+    <action
+      attribute="regform"
+      name="regform"
+      path="/reg"
+      scope="request"
+      type="com.lzybj.struts.action.RegAction"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="succ"
+        path="/login.jsp"
+        redirect="true" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.lzybj.struts.ApplicationResources" />
+</struts-config>
+

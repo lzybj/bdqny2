@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>	
+	<package name="my" namespace="/" extends="jfreechart-default">
+		<action name="getpiechart" class="com.lzybj.struts.action.GetPieChart">
+			<result type="chart">
+				<param name="width">700</param>
+				<param name="height">500</param>
+			</result>
+		</action>
+	</package>
+</struts>    

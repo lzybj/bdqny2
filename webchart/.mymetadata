@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="webchart"
+  id="myeclipse.1388476691059"
+  context-root="/webchart"
+  j2ee-spec="5.0"
+  archive="webchart.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <!-- 配置actionform -->
+  <form-beans>
+    <!-- name:actionform别名;type:actionform的类路径 -->
+  	<form-bean name="loginform" type="com.lzybj.struts.form.LoginActionForm"></form-bean>
+    <form-bean name="regActionForm" type="com.lzybj.struts.form.RegActionForm" />
+  </form-beans>
+  <!-- 配置action -->
+  <action-mappings>
+    <!-- path:action的路径;name:actionform别名;type:action类路径;scope:actionform的共享域，默认值：request -->
+  	<action path="/loginaction"
+  			name="loginform"
+  			type="com.lzybj.struts.action.LoginAction"
+  			scope="request">
+  		<!-- name:逻辑地址；path:真实地址 -->
+  	   <forward name="succ" path="/main.jsp"></forward>
+  	</action>
+    <action
+      attribute="regActionForm"
+      name="regActionForm"
+      path="/reg"
+      scope="request"
+      type="com.lzybj.struts.action.RegAction"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="succ"
+        path="/succ.jsp"
+        redirect="true" />
+    </action>
+  </action-mappings>
+  <message-resources parameter="com.lzybj.struts.ApplicationResources" />
+</struts-config>
+

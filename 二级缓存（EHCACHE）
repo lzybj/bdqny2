@@ -1,0 +1,36 @@
+配置二级缓存（EHCACHE）
+
+1.查看当前Hibernate框架发行版本中是否含有ehcache.jar插件
+
+2.配置hibernate.cfg.xml文件
+
+ 2.1 配置提供二级缓存类对象属性
+ 
+ 	<property name="cache.provider_class">
+		org.hibernate.cache.EhCacheProvider
+	</property>
+	
+ 2.2 开启二级缓存支持的属性
+ 	<property name="cache.use_second_level_cache">true</property>
+
+
+ 2.3 开启支持查询缓存（三级缓存）的属性(可选)
+ 
+ 	<property name="cache.use_query_cache">true</property>
+ 	
+3.配置或使用ehcache.xml文件
+
+此文件放置在src目录下
+
+         默认缓存策略，在不指定某个缓存策略时，使用此配置
+    		 maxElementsInMemory:配置缓存中对象最大个数
+    		 eternal:配置缓存中的对象是否永远被缓存(true：永远;false:可被替换)
+    		 timeToIdleSeconds:最长的闲置时间(秒)
+    		 timeToLiveSeconds:对象最长生命存活时间(秒)
+    		 overflowToDisk:如果溢出内存，是否转存到磁盘(true:是)
+
+
+4.对某个POJO类的配置文件(*.hbm.xml)，缓存策略设置
+
+注意：由于ehcache.jar使用的日志工具不用于hibernate的log4j，所以，
+必须要引入common-logging.jar包

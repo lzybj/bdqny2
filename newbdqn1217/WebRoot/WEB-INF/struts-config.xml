@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="customersActionForm" type="com.lzybj.struts.form.CustomersActionForm" />
+    <!-- 动态actionform -->
+    <form-bean name="regform" type="org.apache.struts.action.DynaActionForm">
+    		<form-property name="cname" type="java.lang.String"></form-property>
+    		<form-property name="cpwd" type="java.lang.String"></form-property>
+    </form-bean>
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards>
+  	<forward name="nocx" path="/cx.jsp"></forward>
+  </global-forwards>
+  <action-mappings >
+    <action
+      attribute="customersActionForm"
+      name="customersActionForm"
+      parameter="par"
+      path="/custaction"
+      scope="request"
+      type="com.lzybj.struts.action.CustomerAction"
+      input="/cx.jsp"
+      validate="true">
+      <set-property property="cancellable" value="true" />
+      <forward name="succ" path="/res.jsp" />
+    </action>
+    <action
+      attribute="regform"
+      name="regform"
+      path="/reg"
+      scope="request"
+      type="com.lzybj.struts.action.RegAction"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="succ"
+        path="/cx.jsp"
+        redirect="true" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.lzybj.struts.ApplicationResources" />
+</struts-config>
+

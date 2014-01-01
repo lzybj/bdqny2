@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+		<action name="login" class="empaction" method="login">
+			<result name="succ">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<action name="createbxd" class="bxdaction" method="createbxd">
+			<result name="succ">/newbxd_detail.jsp</result>
+		</action>
+		<action name="createbxddetail" class="bxdaction" method="createbxddetail">
+			<result name="succ">/newbxd_detail.jsp</result>
+		</action>
+		<action name="ylviewbxd" class="bxdaction" method="ylviewbxd">
+			<result name="succ">/yl_submit.jsp</result>
+		</action>
+		<action name="submitbxd" class="bxdaction" method="submitbxd">
+			<result name="succ">/index.jsp</result>
+		</action>
+		<action name="viewdshlist" class="empaction" method="viewdshlist">
+			<result name="succ">/bxd_dsh_list.jsp</result>
+		</action>
+		<action name="viewspbxddetail" class="bxdaction" method="viewspbxddetail">
+			<result name="succ">/sp_bxd_detail.jsp</result>
+		</action>
+		<action name="spbxd" class="empaction" method="spbxd">
+			<result name="succ">/index.jsp</result>
+		</action>
+	</package>
+</struts>    

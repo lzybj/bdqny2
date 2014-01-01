@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 员工相关action(登录等) -->
+	<bean id="empaction" class="com.lzybj.struts.action.SysEmployeeAction">
+		<property name="ses" ref="empservice"></property>
+		<property name="bxdservice" ref="bxdservice"></property>
+	</bean>
+	<!-- 报销单相关action -->
+	<bean id="bxdaction" class="com.lzybj.struts.action.BizClaimVoucherAction">
+		<property name="itemservice" ref="itemservice"></property>
+		<property name="bxdservice" ref="bxdservice"></property>
+	</bean>
+</beans>

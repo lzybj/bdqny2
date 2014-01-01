@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="jboa1130"
+  id="myeclipse.1385772412531"
+  context-root="/jboa1130"
+  j2ee-spec="5.0"
+  archive="jboa1130.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

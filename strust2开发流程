@@ -1,0 +1,42 @@
+1.Struts2.0框架开发步骤
+
+本步骤以MVC设计模式为基础，即（先业务逻辑实现，后视图开发，最后控制开发）
+
+1.编写对应的业务逻辑类（或业务方法）----Hibernate框架来实现持久层设计
+
+2.编写JSP或HTML视图页面(Struts2标签库)
+
+3.编写Action控制层
+
+3.1 利用mothed属性实现减少Action数量的方法
+
+3.2 验证表单
+
+  3.2.1 继承ActionSupport类，并重写validate方法
+  3.2.2 使用addFieldError方法，将提示信息设置,注意:改方法的第一个参数为对应的请求参数名或组件名
+  3.2.3 配置struts.xml，将该Action的result标签添加一个input值 
+
+4.编写Struts.xml配置文件，配置Action类
+
+
+---------------
+使用validation验证框架的开发步骤
+
+1.编写validation的XML配置文件
+
+1.1 此文件必须与对应action放置在同一个包下
+
+1.2 此文件命名规范如下
+
+   1.2.1 如果在一个action中只有一个execute方法或只有一个类似的方法
+   
+   例如：action类名:LoginAction
+      LoginAction-validation.xml
+      
+   1.2.2 如果在一个action中有多个方法，对应多个action标记
+   
+   例如：action类名:UsersAction
+      UsersAction-login-validation.xml
+   注意：login为action的name属性值
+   
+1.3 配置对应的jsp页面中form标签中validation属性为true

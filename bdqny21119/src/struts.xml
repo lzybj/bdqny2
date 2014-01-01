@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+		<action name="viewvotes" class="com.lzybj.struts.action.VoteSubjectAction" method="viewvotes">
+			<result name="succ">/viewvotes.jsp</result>
+		</action>
+		<action name="tpsubject" class="com.lzybj.struts.action.VoteSubjectAction" method="tpsubject">
+			<result name="succ">/votesubject.jsp</result>
+		</action>
+		<action name="tp" class="com.lzybj.struts.action.VoteSubjectAction" method="tp">
+			<result name="succ">/succ_vote.jsp</result>
+		</action>
+		<action name="viewtotal" class="com.lzybj.struts.action.VoteItemAction" method="viewtotal">
+			<result name="succ">/votetotal.jsp</result>
+		</action>
+	</package>
+</struts>    

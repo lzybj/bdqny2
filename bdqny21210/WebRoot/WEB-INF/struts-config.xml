@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <!-- 配置所有的actionform -->
+  <form-beans>
+  	<form-bean name="loginform" type="com.lzybj.struts.form.LoginActionForm"></form-bean>
+  </form-beans>
+  <!-- 配置所有的action -->
+  <action-mappings>
+  	<action name="loginform"
+  	        path="/loginaction"
+  	        type="com.lzybj.struts.action.LoginAction"
+  	        scope="request">
+  	   <forward name="succ" path="/succ.jsp" redirect="true"></forward>
+  	   <forward name="fail" path="/fail.jsp"></forward>
+  	</action>
+  </action-mappings>
+  <message-resources parameter="com.lzybj.struts.ApplicationResources" />
+</struts-config>
+

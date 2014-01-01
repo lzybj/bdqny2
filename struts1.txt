@@ -1,0 +1,29 @@
+Struts1.2开发流程：
+
+1.创建XxxActionForm类
+
+1.1 继承ActionForm类
+
+1.2 创建与请求参数名一致的属性，并提供getter/setter方法
+
+2.创建XxxAction类
+
+2.1 继承Action类
+
+2.2 重写execute方法
+
+注意：
+
+1.获得XxxActionForm类的实例
+
+2.定义逻辑地址
+
+3.配置struts-config.xml
+
+注意：所有相对路径的配置，都以“/”开头!!!
+
+
+
+----------
+
+注意：struts1.x并不提供对中文字符集的拦截过滤，需手动转型。

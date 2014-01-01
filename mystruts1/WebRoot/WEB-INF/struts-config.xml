@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="usersForm" type="com.lzybj.struts.form.UsersForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="usersForm"
+      name="usersForm"
+      parameter="method"
+      path="/users"
+      scope="request"
+      type="com.lzybj.struts.action.UsersAction"
+      input="/login.jsp"
+      validate="true">
+      <set-property property="cancellable" value="true" />
+      <forward name="succ" path="/succ.jsp" />
+      <forward name="fail" path="/fail.jsp" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.lzybj.struts.ApplicationResources"  />
+</struts-config>
+

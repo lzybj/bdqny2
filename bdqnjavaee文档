@@ -168,3 +168,5 @@ sshtxl-----------Spring案例之SSH通讯录案例
 weberrorconfig---web异常页面处理案例
 
 webchart---------jfreechart案例
+
+blobimg----------Struts2与Hibernate,Spring之blob存储图片以及显示案例

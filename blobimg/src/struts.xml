@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="my" namespace="/" extends="struts-default">
+		<action name="imgupload" class="imgaction" method="uploadimg">
+			<result name="succ">/index.jsp</result>
+		</action>
+		<action name="viewimg" class="imgaction" method="viewimg">
+			<result name="succ" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="bufferSize">1024</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>    

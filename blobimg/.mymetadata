@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="blobimg"
+  id="myeclipse.1389001026509"
+  context-root="/blobimg"
+  j2ee-spec="5.0"
+  archive="blobimg.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

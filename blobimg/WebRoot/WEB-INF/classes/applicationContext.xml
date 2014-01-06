@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" >
+		<property name="driverClass" value="oracle.jdbc.OracleDriver"></property>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.240.134:1522:ORCL"></property>
+		<property name="user" value="bdqn_facelook_admin"></property>
+		<property name="password" value="qaz123"></property>
+		<property name="minPoolSize" value="2"></property>
+		<property name="maxPoolSize" value="20"></property>
+		<property name="initialPoolSize" value="3"></property>
+		<property name="acquireIncrement" value="2"></property>
+		<property name="maxIdleTime" value="18000"></property>
+		<property name="checkoutTimeout" value="10000"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/lzybj/hibernate/domain/Test.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="myservice" class="com.lzybj.service.TestService">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="imgaction" class="com.lzybj.struts.action.ImgAction" scope="prototype">
+		<property name="ts" ref="myservice"></property>
+	</bean>
+</beans>
